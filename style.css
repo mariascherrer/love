@@ -12,51 +12,53 @@ body{
 }
 
 .card_login {
-    padding: 100px;
+    
+    width: 800px;
+    height: 600px;
     border-radius: 40px;
     background-image: url(https://preview.redd.it/d9spuwer2c491.png?width=1050&format=png&auto=webp&v=enabled&s=f6b6908ea6b25b4914c6aadce02a54ed064f4ae9);
     background-repeat: no-repeat;
     background-size: 800px 600px;
-
-    
+    padding: 60px;
+    margin-top: 400px;
 }
 .card_login h1{
     color: #ffffff;
- 
     font-weight: bold;
     display: flex;
     justify-content: center;
     margin-bottom: 40px;
+    font-size: 80px;
 }
 
 .card_login input{
 
-    padding: 25px;
+    padding: 45px;
     border-radius: 20px;
     border: 1px solid #ccc;
     font-size: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 40px;
 }
 
 .card_login button{
-    padding: 20px;
+    padding: 40px;
     border-radius: 20px;
-    background-color: #198f85;
+    background-color: #e7f458;
     border: none;
-    border-bottom: 4px solid #0c0c0c;
-    border-right: 4px solid #0c0c0c;
-    color: aliceblue;
-    font-size: 20px;
+    color: rgb(0, 0, 0);
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .card_login button:hover{
-    padding: 20px;
-    border-radius: 20px;
-    background-color: #35dacc;
-    border: none;
-    border-bottom: 4px solid #0c0c0c;
-    border-right: 4px solid #0c0c0c;
-    color: aliceblue;
-    font-size: 20px;
+   
+    background-color: #aeb938;
+    
 }
 .swal2-popup.swal2-modal.swal2-show .swal2-header{
     background-image: url(https://www.pngmart.com/files/13/Pokemon-Charmander-PNG-Pic.png);
@@ -116,9 +118,12 @@ body{
     margin-top: 20px;
     display: block;
   }
+  #area{
+    width: 250px;
+    margin-top: 20px;
+  }
   .card {
     background: #191c29;
-   
     padding: 0px;
     position: relative;
     border-radius: 6px;
@@ -126,7 +131,7 @@ body{
     align-items: center;
     text-align: center;
     display: flex;
-    width: 100vh;
+    width: 350px;
     height: var(--card-height);
     font-size: 1.5em;
     color: #fff;
@@ -136,7 +141,7 @@ body{
   
   .card::before {
     content: "";
-    width: 101vh;
+    width: 353px;
     height: 102%;
     border-radius: 8px;
     background-image: linear-gradient(
@@ -156,7 +161,7 @@ body{
     right: 0;
     z-index: -1;
     height: 100%;
-    width:100vh;
+    width:350px;
     margin: 0;
     transform: scale(0.8);
     filter: blur(calc(var(--card-height) / 6));
@@ -183,12 +188,12 @@ body{
   .option{
       background-color: rgb(205, 50, 140);
       color: #fff;
-      height: 90px;
-      width: 90px;
+      width: 100%;
+      padding: 10px;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 50px;
+      align-items: rigth;
+      justify-content: rigth;
+      margin: 10px;
       font-size: 35px;
       border-radius: 15px;
       transition: all .5s;
@@ -269,11 +274,57 @@ body{
     color: black;
     background-color: #fff;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     justify-content: center;
     margin-top: 20px;
+    
   }
 
-  .legend_end{
-    margin-top: 180px;
+  #end img{
+    width: 100%;
   }
+  .legend_end{
+/*     
+    display: block; */
+    display: flex;
+    justify-content: center;
+    
+  }
+
+  .legend_end h1{
+    display: block;
+    text-align: center;
+  }
+
+  .text_end{
+    display: flex;
+    justify-content: center;
+  }
+  .text_end h3{
+    display: block;
+  }
+  .legend{
+    display: block;
+   align-items: center;
+   margin-top: 180px;
+  }
+  /*game*/
+
+body#game{
+  margin-top: 20px;
+  
+  background-color: #26736c
+ 
+}
+
+.button_card{
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.button_game{
+  background-color: transparent;
+  margin-left: 10px;
+  border: none;
+}

@@ -21,7 +21,7 @@ window.onload = function () {
 
         assetsLoaded();
     };
-    terrainImage.src = "images/pokemon_terrain.jpg";
+    terrainImage.src = "images/cenario.png";
 
     //house image
     var houseImage = new Image();
@@ -157,6 +157,7 @@ window.onload = function () {
         context.drawImage(houseImage, 80, 60);
         
         context.drawImage(pokeballImage, pokeball.spritePosition * pokeball.spriteItemDistance, 0, objectSizes, objectSizes, pokeball.x * objectSizes, pokeball.y * objectSizes, objectSizes, objectSizes);
+        
         context.drawImage(playerImage, player.direction[player.currentDirection].x, player.direction[player.currentDirection].y, objectSizes - 2, objectSizes, player.x * objectSizes, player.y * objectSizes, objectSizes, objectSizes);
        
     
@@ -301,7 +302,7 @@ window.onload = function () {
     }
 
     // Associa os eventos de toque aos botões
-    var buttons = document.getElementsByClassName("button");
+    var buttons = document.getElementsByClassName("button_game");
 
     for (var i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener("touchstart", handleTouchStart);

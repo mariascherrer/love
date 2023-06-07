@@ -25,7 +25,7 @@ window.onload = function () {
 
         assetsLoaded();
     };
-    terrainImage.src = "images/pokemon_terrain.jpg";
+    terrainImage.src = "images/cenario.jpg";
 
     //house image
     var houseImage = new Image();

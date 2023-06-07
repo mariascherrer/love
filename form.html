@@ -15,52 +15,48 @@
     <div class="card">
         <div class="conteiner">
             <div id="area">
-
                 <spam class="title">Você nerdola deve preencher o formulário</spam>
 
-               <div class="form">
-                <label class="container_label">Não vai olhar pra nehuma mulher
-                    <input type="checkbox"  >
-                    <span class="checkmark"></span>
-                  </label>
-                  <label class="container_label">Não vai achar nenhuma mulher bonita
-                    <input type="checkbox"  >
-                    <span class="checkmark"></span>
-                  </label>
-                  <label class="container_label">Se trair vai pagar 50k
-                    <input type="checkbox"  >
-                    <span class="checkmark"></span>
-                  </label>
-                  <label class="container_label">Não vai me abandonar nunca 
-                    <input type="checkbox"  >
-                    <span class="checkmark"></span>
-                  </label>
-                  <label class="container_label">Não vai me trocar
-                    <input type="checkbox"  >
-                    <span class="checkmark"></span>
-                  </label>
-                  <label class="container_label">Vai parar de ver porno
-                    <input type="checkbox"  >
-                    <span class="checkmark"></span>
-                  </label>
-                  <label class="container_label">Vai parar de acreditar que o tem em porno é verdade
-                    <input type="checkbox"  >
-                    <span class="checkmark"></span>
-                  </label>
-                  <label class="container_label">Não vai me abandonar assim como todo mundo nessa merda
-                    <input type="checkbox"  >
-                    <span class="checkmark"></span>
-                  </label>
-               </div>
-               <div class="buttons">
-                <span>você concorda?</span>
-                <div class="option" id="opcyes">
-                    sim
-                </div>
-                <div class="option" id="opcNo">
-                    não
-                </div>
-               </div>
+              <form id="form" action="end.html">
+                <div class="form">
+                  <label class="container_label">Não vai olhar pra nehuma mulher
+                      <input type="checkbox"  name="checkbox1">
+                      <span class="checkmark"></span>
+                    </label>
+                    <label class="container_label">Não vai achar nenhuma mulher bonita
+                      <input type="checkbox"   name="checkbox2">
+                      <span class="checkmark"></span>
+                    </label>
+                    <label class="container_label">Se trair vai pagar 50k
+                      <input type="checkbox"   name="checkbox3">
+                      <span class="checkmark"></span>
+                    </label>type="checkbox" required</span>
+                    </label>
+                    <label class="container_label">Não vai me trocar
+                      <input type="checkbox"  name="checkbox5">
+                      <span class="checkmark"></span>
+                    </label>
+                    <label class="container_label">Vai parar de ver porno
+                      <input type="checkbox"   name="checkbox6">
+                      <span class="checkmark"></span>
+                    </label>
+                    <label class="container_label">Vai parar de acreditar que o tem em porno é verdade
+                      <input type="checkbox"   name="checkbox8">
+                      <span class="checkmark"></span>
+                    </label>
+                    <label class="container_label">Não vai me abandonar assim como todo mundo nessa merda
+                      <input type="checkbox"   name="checkbox7">
+                      <span class="checkmark"></span>
+                    </label>
+                 </div>
+                 <div class="buttons">
+                  <span>você concorda?</span>
+                    <input class="option" id="opcyes" type="submit" value="sim">
+                  <div class="option" id="opcNo">
+                      não
+                  </div>
+                 </div>
+              </form>
             </div>
         </div>
     </div>
@@ -114,11 +110,28 @@ function entrar(){
     }
 }
 
-sim.addEventListener("click", clicar)
+ 
 
-function clicar(){
-    window.location.href = "end.html";
-    
-}    
+document.getElementById("form").addEventListener("submit", function(event) {
+  var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  console.log(checkboxes);
+  var checked = 0;
+  var allChecked = true;
+  for (var i = 0; i < checkboxes.length; i++) {
+    if (!checkboxes[i].checked) {
+      console.log(checkboxes[i].checked)
+      allChecked = false;
+      break;
+    }
+
+  }
+  
+  if (!allChecked) {
+    event.preventDefault(); // Impede o envio do formulário
+    alert("Por favor, marque todos os checkboxes!");
+  }
+
+});
+
 </script>
 </html>
