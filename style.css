@@ -60,24 +60,6 @@ body{
     background-color: #aeb938;
     
 }
-.swal2-popup.swal2-modal.swal2-show .swal2-header{
-    background-image: url(https://www.pngmart.com/files/13/Pokemon-Charmander-PNG-Pic.png);
-    background-size: 80px 80px;
-    background-repeat: no-repeat;
-    width: 300px;
-    height: 80px;
-    display: flex;
-    justify-content: left;
-    
-}
-
-.swal2-popup.swal2-modal.swal2-show .swal2-header .swal2-title{
-    color: #000;
-}
-
-.swal2-actions .swal2-confirm.swal2-styled{
-    background-color: pink;
-}
 
 @property --rotate {
     syntax: "<angle>";

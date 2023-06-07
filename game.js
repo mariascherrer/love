@@ -13,7 +13,7 @@ window.onload = function () {
     var modifier = 100;
     var score = 0;
     //terrain image
-    var terrainImage = new Image(800, 800);
+    var terrainImage = new Image(600, 600);
 
     terrainImage.onload = function () {
 
@@ -70,9 +70,10 @@ window.onload = function () {
         spriteItemDistance: 33
     };
     pokeball.generatePosition = function () {
+
         do {
             pokeball.x = Math.floor(Math.random() * 20) + 1;
-            pokeball.y = Math.floor(Math.random() * 16) + 4;
+            pokeball.y = Math.floor(Math.random() * 10) + 4;
         } while (check_collision(pokeball.x, pokeball.y));
 
         pokeball.spritePosition = Math.floor(Math.random() * 4) + 0;// get position from 0-4
@@ -150,12 +151,24 @@ window.onload = function () {
     var isRightPressed = false;
     var isUpPressed = false;
     var isDownPressed = false;
+    function board() {
+        context.fillStyle = "rgba(0, 0, 0, 0.5)";
+        context.fillRect(w - 100, h - 70, 100, 70);
+
+        context.font = "18px Arial";
+        context.fillStyle = "rgba(255, 255, 255, 1)";
+        context.fillText("Você achou", w - 93, h - 45);
+
+        context.font = "14px Arial";
+        context.fillStyle = "rgba(255, 255, 255, 1)";
+        context.fillText(score + " pokebolas", w - 85, h - 25);
+    }
 
     // Funções de renderização e atualização do jogo
     function render() {
         context.drawImage(terrainImage, 0, 0);
         context.drawImage(houseImage, 80, 60);
-        
+        board();
         context.drawImage(pokeballImage, pokeball.spritePosition * pokeball.spriteItemDistance, 0, objectSizes, objectSizes, pokeball.x * objectSizes, pokeball.y * objectSizes, objectSizes, objectSizes);
         
         context.drawImage(playerImage, player.direction[player.currentDirection].x, player.direction[player.currentDirection].y, objectSizes - 2, objectSizes, player.x * objectSizes, player.y * objectSizes, objectSizes, objectSizes);
@@ -250,7 +263,7 @@ window.onload = function () {
         render();
 
     }
-   
+    
     // Funções para lidar com eventos de toque
     function handleTouchStart(event) {
         event.preventDefault();
@@ -326,33 +339,36 @@ window.onload = function () {
             console.log("found a pokeball of " + pokeball.spritePosition + "! Bravo! ");
             pokePick.pause();
             pokePick.currentTime = 0;
-            if (score < 5) {
+            if (score < 6) {
 
                 pokePick.play();
                 score += 1;
                 if (score === 1) {
-                    swal('Mensagem 1', 'Eu nunca imaginei que a gente estaria aqui, mas de certa forma você iluminou um pouco minha vida');
+                    swal('', 'Tu foi uma das melhores coisas de 2022, meu ano tava muito fudido, eu tava muito sozinha');
                 }
                 if (score === 2) {
-                    swal('Mensagem 2', 'Procurei leitinho de várias marcas mas nenhum se compara ao seu');
+                    swal('', 'Obrigado por ter me aceitado desse jeito');
                 }
                 if (score === 3) {
-                    swal('Mensagem 3', 'Te amo nerdola');
+                    swal('', 'Procurei leitinho de várias marcas mas nenhum se compara ao seu');
                 }
                 if (score === 4) {
-                    swal('Mensagem 3', 'Tenho bloqueio emocional e não vou mais coisa, mas você ja entendeu');
+                    swal('', 'Você não é raiz de 16 mas sempre pode me deixar de 4');
+                }
+                if (score === 5) {
+                    swal('', 'Te amo nerdola');
                 }
                 
                 pokeball.generatePosition();
             }
 
-            if (score === 5) {
-                swal('Você achou todas as pokebolas', 'Va até a porta da casinha');
-                
+            if (score === 6) {
+                swal('', 'Acabou, seria mensagem de mais.Va até a porta da casinha');
+                score += 1;
             }
 
         }
-        if (Math.floor(player.x) == 6 && Math.floor(player.y) == 7 && score >= 5) {
+        if (Math.floor(player.x) == 6 && Math.floor(player.y) == 7 && score >= 6) {
             window.location.href = "form.html";
         }
         update();
