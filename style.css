@@ -324,7 +324,14 @@ body#game{
 }
 
 .button_game{
-  background-color: transparent;
+  background-color: #070707;
   margin-left: 10px;
   border: none;
+  padding: 40px;
+  color: #fff;
+}
+
+.button_game:active{
+  padding: 10px;
+  border: 2px solid white;
 }

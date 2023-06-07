@@ -2,6 +2,10 @@
 
 What more awesome doing a game for fun on HTML5 canvas also when it has to do with the legendary POKEMON !
 
+
+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
+
+
   - I used HTML5 audio for background and pokeball pickup etc
   - I created a mechanism for walking sprites for the player
   - A technique for the collision on the player objects but also for the pokeball random creation (not to go on the woods or the house)

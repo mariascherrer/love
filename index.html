@@ -1,37 +1,42 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
-    <meta charset="UTF-8">
-    <title>HTML5 Canvas Pokemon Game</title>
-    
-    <meta name="keywords" content="HTML,POKEMON,POKEBALL,JavaScript,HTML5">
-    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-    <script src="https://unpkg.com/sweetalert2@7.12.15/dist/sweetalert2.all.js"></script>
-    <script src="canvas.pokemon.js"></script>
-    <!-- <script src="script.js"></script> -->
-    <link rel="stylesheet" href="style.css" type='text/css'>
-    <script>
-        function login() {
-          var senha = document.getElementById("pass").value;
-          
-          if (senha === "2905") {
-            window.location.href = "game.html";
-          } else {
-            alert("Senha incorreta. Tente novamente.");
-          }
-        }
-      </script>
+  <meta charset="UTF-8">
+  <title>HTML5 Canvas Pokemon Game</title>
+
+  <meta name="keywords" content="HTML,POKEMON,POKEBALL,JavaScript,HTML5">
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="https://unpkg.com/sweetalert2@7.12.15/dist/sweetalert2.all.js"></script>
+  <script src="canvas.pokemon.js"></script>
+  <!-- <script src="script.js"></script> -->
+  <link rel="stylesheet" href="style.css" type='text/css'>
+  <script>
+    function login() {
+      var senha = document.getElementById("pass").value;
+
+      if (senha === "2905") {
+        window.location.href = "game.html";
+      } else {
+        alert("Senha incorreta. Tente novamente.");
+      }
+    }
+
+   
+  </script>
 </head>
+
 <body>
 
-    <div class="card_login">
-        <h1>Login</h1>
+  <div class="card_login">
+    <h1>Login</h1>
 
-        <form>
-            <input type="password" id="pass" name="pass" placeholder="SENHA"/>
-            <button type="button" onclick="login()">entrar</button>
-        </form>
-    </div>
-    <!-- <canvas id="canvas" width="460" height="460"></canvas> -->
+    <form>
+      <input type="password" id="pass" name="pass" placeholder="SENHA" />
+      <button type="button" onclick="login()">entrar</button>
+    </form>
+  </div>
+
 </body>
+
 </html>
