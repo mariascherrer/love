@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="form">
+    <header class="container">
+        <h1>Juramento</h1>
+    </header>
+
+    <div class="card">
+        <div class="conteiner">
+            <div id="area">
+
+                <spam class="title">Você nerdola deve preencher o formulário</spam>
+
+               <div class="form">
+                <label class="container_label">Não vai olhar pra nehuma mulher
+                    <input type="checkbox"  >
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container_label">Não vai achar nenhuma mulher bonita
+                    <input type="checkbox"  >
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container_label">Se trair vai pagar 50k
+                    <input type="checkbox"  >
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container_label">Não vai me abandonar nunca 
+                    <input type="checkbox"  >
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container_label">Não vai me trocar
+                    <input type="checkbox"  >
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container_label">Vai parar de ver porno
+                    <input type="checkbox"  >
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container_label">Vai parar de acreditar que o tem em porno é verdade
+                    <input type="checkbox"  >
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container_label">Não vai me abandonar assim como todo mundo nessa merda
+                    <input type="checkbox"  >
+                    <span class="checkmark"></span>
+                  </label>
+               </div>
+               <div class="buttons">
+                <span>você concorda?</span>
+                <div class="option" id="opcyes">
+                    sim
+                </div>
+                <div class="option" id="opcNo">
+                    não
+                </div>
+               </div>
+            </div>
+        </div>
+    </div>
+    <footer id="textinho">
+        
+    </footer>
+      
+</body>
+
+<style type="text/css">
+  
+
+
+</style>
+<script type="text/javascript">
+const sim = window.document.getElementById("opcyes")
+const nao = window.document.getElementById("opcNo")
+const fundo = window.document.getElementById("area")
+const resp = window.document.getElementById("textinho")
+
+nao.addEventListener("mouseenter", entrar)
+let estado = -1
+
+function entrar(){
+    estado++
+    if (estado == 0){
+        sim.style.transform="translate(+95px)"
+        nao.style.transform="translate(130px, -150px)"
+    }
+    if (estado == 1){
+        nao.style.transform="translate(130px, +150px)"
+    }
+    if (estado == 2){
+        nao.style.transform="translate(-325px, +150px)"
+    }
+    if (estado == 3){
+        nao.style.transform="translate(-325px, -150px)"
+    }
+    if (estado == 4){
+        nao.style.transform="translate(+135px, +150px)"
+    }
+    if (estado == 5){
+        nao.style.transform="translate(+135px, -150px)"
+    }
+    if (estado == 6){
+        nao.style.transform="translate(-325px, +150px)"
+    }
+    if (estado == 7){
+        nao.style.transform="translate(-325px, -150px)"
+        estado = -1
+    }
+}
+
+sim.addEventListener("click", clicar)
+
+function clicar(){
+    window.location.href = "end.html";
+    
+}    
+</script>
+</html>
